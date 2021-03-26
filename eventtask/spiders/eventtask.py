@@ -46,11 +46,11 @@ class EventtaskSpider(scrapy.Spider):
 			#scription = [''.join(des) for des in description]
 			yield EventtaskItem(
 			event_name = response.xpath("//div[@class='padding-10 head-details hidden-phone']/h1/text()").getall(),
-			address = response.xpath("////span[@class='full-venue']/text()").extract(),
-			image= response.xpath("////img[@property='schema:image']/@src").extract(),
-			org_name = response.xpath("////div[@class='name']/span/a/text()").extract(),
+			address = response.xpath("//span[@class='full-venue']/text()").extract(),
+			image= response.xpath("//img[@property='schema:image']/@src").extract(),
+			org_name = response.xpath("//div[@class='name']/span/a/text()").extract(),
 			org_url = response.xpath("//div[@class='name']//a/@href").extract(),
-			org_image = response.xpath("////div[@class='thumb']/a/img/@src").extract(),
+			org_image = response.xpath("//div[@class='thumb']/a/img/@src").extract(),
 			#escription = description
 
 			)
